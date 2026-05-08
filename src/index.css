@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-orbitron: "Orbitron", sans-serif;
+  
+  --color-obsidian: #0A0A0A;
+  --color-crimson: #DC2626;
+  --color-crimson-light: #EF4444;
+  --color-crimson-dark: #991B1B;
+}
+
+@keyframes rgb-neon {
+  0% { box-shadow: 0 0 15px rgba(220, 38, 38, 0.4), inset 0 0 10px rgba(220, 38, 38, 0.2); }
+  50% { box-shadow: 0 0 35px rgba(220, 38, 38, 0.8), inset 0 0 20px rgba(220, 38, 38, 0.4); }
+  100% { box-shadow: 0 0 15px rgba(220, 38, 38, 0.4), inset 0 0 10px rgba(220, 38, 38, 0.2); }
+}
+
+.rgb-animate {
+  animation: rgb-neon 3s infinite ease-in-out;
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-white font-sans overflow-x-hidden;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.red-glow {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+}
+
+.red-glow-heavy {
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+}
+
+.neon-border {
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.2);
+}
+
