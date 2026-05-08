@@ -75,14 +75,15 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
   };
 
   return (
-    <div className="min-h-screen max-w-lg mx-auto px-6 py-8 pb-32 space-y-8 overflow-y-auto bg-transparent">
-      {/* Header */}
-      <div className="flex items-center gap-4">
-        <button onClick={() => onNavigate("login")} className="p-2 hover:bg-white/5 rounded-full ring-1 ring-white/10 transition-all">
-          <RefreshCcw className="w-5 h-5 text-white/60" />
-        </button>
-        <h2 className="text-xl font-bold font-orbitron tracking-tight text-white/90">CONDITIONS</h2>
-      </div>
+    <div className="flex flex-col h-[100dvh] max-w-lg mx-auto bg-transparent overflow-hidden relative">
+      <div className="flex-1 overflow-y-auto px-6 py-8 pb-32 space-y-8 scrollbar-hide">
+        {/* Header */}
+        <div className="flex items-center gap-4">
+          <button onClick={() => onNavigate("login")} className="p-2 hover:bg-white/5 rounded-full ring-1 ring-white/10 transition-all">
+            <RefreshCcw className="w-5 h-5 text-white/60" />
+          </button>
+          <h2 className="text-xl font-bold font-orbitron tracking-tight text-white/90">CONDITIONS</h2>
+        </div>
 
       {/* 1. Platform Toggle */}
       <section className="space-y-4">
@@ -383,6 +384,7 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           </motion.div>
         )}
       </AnimatePresence>
+      </div> {/* End of flex-1 scrollable area */}
     </div>
   );
 }

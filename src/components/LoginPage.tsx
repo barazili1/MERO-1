@@ -36,7 +36,7 @@ export default function LoginPage({ onNavigate, passwordValue, onPasswordChange,
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-md mx-auto px-6 py-8 bg-transparent relative overflow-hidden">
+    <div className="flex flex-col h-[100dvh] max-w-md mx-auto px-6 py-8 bg-transparent relative overflow-hidden">
       {/* Error Alert Overlay */}
       <AnimatePresence>
         {error && (

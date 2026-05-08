@@ -3,7 +3,7 @@ import { Crown } from "lucide-react";
 
 export default function SplashScreen() {
   return (
-    <div className="flex flex-col items-center justify-between h-screen py-24 bg-transparent">
+    <div className="flex flex-col items-center justify-between h-[100dvh] py-24 bg-transparent">
       <div /> {/* Spacer */}
       
       <div className="flex flex-col items-center gap-6">

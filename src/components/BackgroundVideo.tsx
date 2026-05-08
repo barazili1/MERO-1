@@ -9,7 +9,14 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        className="absolute w-full h-full object-cover opacity-90"
+        preload="auto"
+        disablePictureInPicture
+        onCanPlayThrough={(e) => {
+          e.currentTarget.play().catch(() => {
+            // Silently fail if browser blocks autoplay, but this helps on many mobiles
+          });
+        }}
+        className="absolute w-full h-full object-cover opacity-90 transition-opacity duration-1000"
       >
         <source 
           src="https://www.image2url.com/r2/default/videos/1778255710540-70f17a78-c0f0-4843-8892-b6c787e6056f.mp4" 

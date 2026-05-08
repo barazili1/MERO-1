@@ -206,9 +206,9 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
   ];
 
   return (
-    <div className="flex flex-col h-screen max-w-lg mx-auto bg-transparent overflow-hidden">
+    <div className="flex flex-col h-[100dvh] max-w-lg mx-auto bg-transparent overflow-hidden">
       {/* Top Bar */}
-      <div className="flex items-center justify-between px-6 pt-8 pb-4 border-b border-white/5 bg-obsidian/50 backdrop-blur-md sticky top-0 z-10">
+      <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-white/5 bg-obsidian/50 backdrop-blur-md sticky top-0 z-10">
         <div className="flex items-center gap-4">
             <h1 className="text-xl font-black font-orbitron tracking-tighter text-white">
                 MERO <span className="text-crimson">VIP</span>
@@ -343,7 +343,7 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
                 </div>
             </div>
 
-            <div className="grid grid-cols-5 gap-2 h-[450px]">
+            <div className="grid grid-cols-5 gap-2 h-[380px] sm:h-[450px]">
                 {Array.from({ length: 50 }).map((_, i) => (
                     <motion.div
                         key={i}
