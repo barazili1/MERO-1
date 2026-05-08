@@ -1,21 +1,30 @@
 import { motion } from "motion/react";
+import { useLayoutEffect, useRef } from "react";
 
 export default function BackgroundVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useLayoutEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Fallback for strict browser policies
+      });
+    }
+  }, []);
+
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       {/* The Video */}
       <video
-        autoPlay
-        muted
-        loop
-        playsInline
+        ref={videoRef}
+        autoPlay={true}
+        muted={true}
+        loop={true}
+        playsInline={true}
+        webkit-playsinline="true"
         preload="auto"
         disablePictureInPicture
-        onCanPlayThrough={(e) => {
-          e.currentTarget.play().catch(() => {
-            // Silently fail if browser blocks autoplay, but this helps on many mobiles
-          });
-        }}
+        controls={false}
         className="absolute w-full h-full object-cover opacity-90 transition-opacity duration-1000"
       >
         <source 

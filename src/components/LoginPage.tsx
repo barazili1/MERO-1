@@ -53,7 +53,7 @@ export default function LoginPage({ onNavigate, passwordValue, onPasswordChange,
       </AnimatePresence>
 
       {/* Top Bar */}
-      <div className="flex items-center justify-between mb-16 px-4 py-3 glass rounded-2xl">
+      <div className="flex items-center justify-between mb-10 sm:mb-16 px-4 py-3 glass rounded-2xl">
         <div className="flex items-center gap-2">
           <Users className="w-4 h-4 text-crimson" />
           <div className="flex flex-col">
