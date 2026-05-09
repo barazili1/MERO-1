@@ -58,3 +58,22 @@
   box-shadow: 0 0 10px rgba(220, 38, 38, 0.2);
 }
 
+/* Hide video controls globally to prevent "Play" icon on mobile */
+video::-webkit-media-controls {
+  display: none !important;
+}
+video::-webkit-media-controls-start-indicator,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

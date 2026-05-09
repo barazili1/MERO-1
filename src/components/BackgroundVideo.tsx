@@ -37,11 +37,11 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        webkit-playsinline="true"
-        preload="auto"
-        disablePictureInPicture
         controls={false}
-        className="absolute w-full h-full object-cover opacity-90"
+        disablePictureInPicture
+        preload="auto"
+        className="absolute w-full h-full object-cover opacity-90 pointer-events-none"
+        style={{ pointerEvents: 'none' }}
       >
         <source 
           src="https://www.image2url.com/r2/default/videos/1778255710540-70f17a78-c0f0-4843-8892-b6c787e6056f.mp4" 
