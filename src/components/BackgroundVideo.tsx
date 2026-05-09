@@ -7,21 +7,25 @@ export default function BackgroundVideo() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
+      // Force initial state
       video.muted = true;
+      video.defaultMuted = true;
       video.playsInline = true;
       
-      const playVideo = () => {
-        const promise = video.play();
-        if (promise !== undefined) {
-          promise.catch(() => {
-            const handleFirstInteraction = () => {
-              video.play();
-              document.removeEventListener('touchstart', handleFirstInteraction);
-              document.removeEventListener('click', handleFirstInteraction);
-            };
-            document.addEventListener('touchstart', handleFirstInteraction);
-            document.addEventListener('click', handleFirstInteraction);
-          });
+      const playVideo = async () => {
+        try {
+          await video.play();
+        } catch (error) {
+          // Fallback if autoplay is blocked: play on first user interaction
+          const handleFirstInteraction = () => {
+            video.play().catch(() => {});
+            document.removeEventListener('touchstart', handleFirstInteraction);
+            document.removeEventListener('click', handleFirstInteraction);
+            document.removeEventListener('keydown', handleFirstInteraction);
+          };
+          document.addEventListener('touchstart', handleFirstInteraction, { passive: true });
+          document.addEventListener('click', handleFirstInteraction, { passive: true });
+          document.addEventListener('keydown', handleFirstInteraction, { passive: true });
         }
       };
 
@@ -39,7 +43,6 @@ export default function BackgroundVideo() {
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none select-none">
-      {/* The Video */}
       <video
         ref={videoRef}
         autoPlay
@@ -53,15 +56,13 @@ export default function BackgroundVideo() {
         style={{ 
           pointerEvents: 'none',
           WebkitBackfaceVisibility: 'hidden',
-          WebkitTransform: 'translateZ(0)'
+          WebkitTransform: 'translateZ(0)',
+          outline: 'none',
+          background: 'transparent'
         }}
         onContextMenu={(e) => e.preventDefault()}
-      >
-        <source 
-          src="https://www.image2url.com/r2/default/videos/1778255710540-70f17a78-c0f0-4843-8892-b6c787e6056f.mp4" 
-          type="video/mp4" 
-        />
-      </video>
+        src="https://www.image2url.com/r2/default/videos/1778255710540-70f17a78-c0f0-4843-8892-b6c787e6056f.mp4"
+      />
 
       {/* Extreme light overlays for maximum video visibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-obsidian/40 via-transparent to-obsidian/40" />

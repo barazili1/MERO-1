@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Cairo", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-orbitron: "Orbitron", sans-serif;
   
   --color-obsidian: #0A0A0A;
@@ -58,7 +58,7 @@
   box-shadow: 0 0 10px rgba(220, 38, 38, 0.2);
 }
 
-/* Hide video controls globally to prevent "Play" icon on mobile */
+/* Hide video controls and overlays globally */
 video::-webkit-media-controls {
   display: none !important;
   -webkit-appearance: none;
@@ -71,6 +71,20 @@ video::-webkit-media-controls-toggle-closed-captions-button,
 video::-webkit-media-controls-enclosure {
   display: none !important;
   -webkit-appearance: none;
+}
+
+/* Hide the big play button in the middle for iOS and some Android browsers */
+video::-webkit-media-controls-overlay-play-button {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  display: none !important;
+}
+
+video::-internal-media-controls-download-button {
+    display:none;
+}
+video::-webkit-media-controls-enclosure {
+    display:none !important;
 }
 
 /* For Firefox */

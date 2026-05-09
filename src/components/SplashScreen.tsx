@@ -60,7 +60,7 @@ export default function SplashScreen() {
       </div>
 
       <div className="flex flex-col items-center gap-4 w-full relative z-10">
-        <p className="text-[10px] font-black tracking-[0.5em] text-pink-300/60 uppercase font-orbitron drop-shadow-[0_0_5px_rgba(244,114,182,0.4)]">Preparing Magic Experience</p>
+        <p className="text-[12px] font-bold text-pink-300/60 uppercase font-sans drop-shadow-[0_0_5px_rgba(244,114,182,0.4)]">جاري تحضير تجربة سحرية</p>
         <div className="w-64 h-1 bg-white/5 rounded-full overflow-hidden relative border border-white/5">
           <motion.div
             initial={{ width: "0%" }}

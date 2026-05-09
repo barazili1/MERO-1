@@ -82,7 +82,7 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           <button onClick={() => onNavigate("login")} className="p-2 hover:bg-white/5 rounded-full ring-1 ring-white/10 transition-all">
             <RefreshCcw className="w-5 h-5 text-pink-400" />
           </button>
-          <h2 className="text-xl font-bold font-orbitron tracking-tight text-white/90">CONDITIONS</h2>
+          <h2 className="text-xl font-bold font-orbitron text-white/90">الشروط والاحكام</h2>
         </div>
 
       {/* 1. Platform Toggle */}
@@ -91,7 +91,7 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center border border-pink-500/30">
             <span className="text-[10px] font-bold text-pink-400">01</span>
           </div>
-          <h3 className="text-sm font-bold tracking-widest text-white/60 uppercase">Pick Your Platform</h3>
+          <h3 className="text-sm font-bold text-white/60 uppercase">اختر منصتك</h3>
         </div>
         <div className="flex p-1 bg-white/5 rounded-2xl border border-white/10">
           <button
@@ -119,15 +119,15 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center border border-pink-500/30">
             <span className="text-[10px] font-bold text-pink-400">02</span>
           </div>
-          <h3 className="text-sm font-bold tracking-widest text-white/60 uppercase">Social Connectivity</h3>
+          <h3 className="text-sm font-bold text-white/60 uppercase">التواصل الاجتماعي</h3>
         </div>
         <div className="grid grid-cols-1 gap-3">
           {[
-            { label: "Join Telegram Channel", icon: Send, color: "text-blue-400", link: "https://t.me/MM2010000007" },
-            { label: "Join Youtube Channel", icon: Youtube, color: "text-red-500", link: "#" }
+            { label: "انضم لقناة التليجرام", icon: Send, color: "text-blue-400", link: "https://t.me/MM2010000007" },
+            { label: "انضم لقناة اليوتيوب", icon: Youtube, color: "text-red-500", link: "#" }
           ].map((task, i) => (
-            <div key={i} className="flex items-center justify-between p-4 glass rounded-2xl transition-all hover:border-pink-500/30 group">
-              <div className="flex items-center gap-3">
+            <div key={i} className="flex flex-row-reverse items-center justify-between p-4 glass rounded-2xl transition-all hover:border-pink-500/30 group">
+              <div className="flex flex-row-reverse items-center gap-3">
                 <task.icon className={`w-5 h-5 ${task.color}`} />
                 <span className="text-sm font-semibold">{task.label}</span>
               </div>
@@ -135,9 +135,9 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
                 href={task.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-1.5 bg-pink-500/10 border border-pink-500/30 rounded-full text-[10px] font-black text-pink-400 tracking-widest uppercase hover:bg-pink-500 hover:text-white transition-all pink-glow"
+                className="px-4 py-1.5 bg-pink-500/10 border border-pink-500/30 rounded-full text-[10px] font-black text-pink-400 uppercase hover:bg-pink-500 hover:text-white transition-all pink-glow"
               >
-                JOIN
+                انضم
               </a>
             </div>
           ))}
@@ -150,16 +150,16 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center border border-pink-500/30">
             <span className="text-[10px] font-bold text-pink-400">03</span>
           </div>
-          <h3 className="text-sm font-bold tracking-widest text-white/60 uppercase">System Ready</h3>
+          <h3 className="text-sm font-bold text-white/60 uppercase">جاهزية النظام</h3>
         </div>
-        <div className="flex items-center justify-between p-4 bg-gradient-to-r from-white/5 to-transparent rounded-2xl border border-white/5 cursor-pointer hover:bg-white/10 transition-colors">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-row-reverse items-center justify-between p-4 bg-gradient-to-r from-white/5 to-transparent rounded-2xl border border-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+          <div className="flex flex-row-reverse items-center gap-3">
             <Download className="w-5 h-5 text-pink-400 animate-bounce" />
-            <span className="text-sm font-semibold uppercase tracking-wider">
-              Download {platform === "1xbet" ? "1XBET" : "LINEBET"}
+            <span className="text-sm font-semibold uppercase">
+              تحميل {platform === "1xbet" ? "1XBET" : "LINEBET"}
             </span>
           </div>
-          <ChevronRight className="w-4 h-4 text-white/20" />
+          <ChevronRight className="w-4 h-4 text-white/20 rotate-180" />
         </div>
       </section>
 
@@ -169,21 +169,20 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center border border-pink-500/30">
             <span className="text-[10px] font-bold text-pink-400">04</span>
           </div>
-          <h3 className="text-sm font-bold tracking-widest text-white/60 uppercase">VIP Promo</h3>
+          <h3 className="text-sm font-bold text-white/60 uppercase">البروموكود VIP</h3>
         </div>
         <div className="relative group">
-          <div className="p-1 glass rounded-2xl flex items-center gap-2 relative z-0 border-pink-500/10">
-            <div className="flex-1 py-4 pl-6 font-mono text-2xl font-black tracking-[0.2em] text-white">
+          <div className="p-1 glass rounded-2xl flex flex-row-reverse items-center gap-2 relative z-0 border-pink-500/10">
+            <div className="flex-1 py-4 pr-6 font-mono text-2xl font-black tracking-[0.2em] text-white text-right">
               MM2010
             </div>
             <button 
               onClick={handleCopy}
-              className={`mr-1 px-6 py-3 rounded-xl font-bold text-xs flex items-center gap-2 transition-all ${
+              className={`ml-1 px-6 py-3 rounded-xl font-bold text-xs flex flex-row-reverse items-center gap-2 transition-all ${
                 copied ? "bg-green-500 text-white" : "bg-pink-500 text-white pink-glow hover:brightness-110"
               }`}
             >
-              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-              {copied ? "COPIED" : "COPY"}
+              {copied ? "تم النسخ" : "نسخ"}
             </button>
           </div>
           
@@ -193,9 +192,9 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
                 initial={{ opacity: 0, scale: 0.9, y: 10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                className="absolute inset-0 z-10 flex items-center justify-center bg-pink-500 rounded-2xl text-white font-black text-sm tracking-[0.3em] pink-glow"
+                className="absolute inset-0 z-10 flex items-center justify-center bg-pink-500 rounded-2xl text-white font-black text-sm pink-glow"
               >
-                COPIED SUCCESSFULLY
+                تم النسخ بنجاح
               </motion.div>
             )}
           </AnimatePresence>
@@ -208,12 +207,12 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center border border-pink-500/30">
             <span className="text-[10px] font-bold text-pink-400">05</span>
           </div>
-          <h3 className="text-sm font-bold tracking-widest text-white/60 uppercase">Investment Requirement</h3>
+          <h3 className="text-sm font-bold text-white/60 uppercase">متطلبات الاستثمار</h3>
         </div>
-        <div className="p-6 bg-gradient-to-br from-pink-500/20 via-white/5 to-white/5 rounded-3xl border border-white/10 flex items-center justify-between">
-          <div className="space-y-1">
-            <p className="text-[10px] font-bold text-white/40 tracking-[0.2em] uppercase">Minimum Deposit</p>
-            <p className="text-xl font-black text-white">300 EGP <span className="text-pink-400 mx-1">|</span> 5$</p>
+        <div className="p-6 bg-gradient-to-br from-pink-500/20 via-white/5 to-white/5 rounded-3xl border border-white/10 flex flex-row-reverse items-center justify-between">
+          <div className="space-y-1 text-right">
+            <p className="text-[10px] font-bold text-white/40 uppercase">الحد الأدنى للإيداع</p>
+            <p className="text-xl font-black text-white" dir="ltr">300 EGP <span className="text-pink-400 mx-1">|</span> 5$</p>
           </div>
           <Wallet className="w-8 h-8 text-white/20" />
         </div>
@@ -225,18 +224,18 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center border border-pink-500/30">
             <span className="text-[10px] font-bold text-pink-400">06</span>
           </div>
-          <h3 className="text-sm font-bold tracking-widest text-white/60 uppercase">Identity Mapping</h3>
+          <h3 className="text-sm font-bold text-white/60 uppercase">تحديد الهوية</h3>
         </div>
         <div className="relative group">
-          <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+          <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
             <User className="w-5 h-5 text-white/20 group-focus-within:text-pink-400" />
           </div>
           <input
             type="number"
             value={userID}
             onChange={(e) => setUserID(e.target.value)}
-            placeholder="Enter Playing ID"
-            className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-pink-500/50 transition-all font-mono"
+            placeholder="أدخل الـ ID الخاص بك"
+            className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pr-12 pl-4 text-white focus:outline-none focus:border-pink-500/50 transition-all font-mono text-right"
           />
         </div>
       </section>
@@ -247,7 +246,7 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
           <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center border border-pink-500/30">
             <span className="text-[10px] font-bold text-pink-400">07</span>
           </div>
-          <h3 className="text-sm font-bold tracking-widest text-white/60 uppercase">Verification Evidence</h3>
+          <h3 className="text-sm font-bold text-white/60 uppercase">أدلة التحقق</h3>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="relative">
@@ -264,12 +263,12 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
                     <img src={URL.createObjectURL(promoFile)} className="w-full h-full object-cover opacity-30" />
                   </div>
                   <Check className="w-6 h-6 text-green-500 relative z-20" />
-                  <span className="text-[9px] font-bold text-center px-4 leading-relaxed text-green-500 relative z-20 uppercase">MM2010 Verified</span>
+                  <span className="text-[9px] font-bold text-center px-4 leading-relaxed text-green-500 relative z-20 uppercase">تم التحقق من الكود</span>
                 </>
               ) : (
                 <>
                   <ImageIcon className="w-6 h-6 text-white/20 group-hover:text-pink-400" />
-                  <span className="text-[9px] font-bold text-center px-4 leading-relaxed text-white/40 uppercase">Promocode Screenshot</span>
+                  <span className="text-[9px] font-bold text-center px-4 leading-relaxed text-white/40 uppercase">سكرين شوت البروموكود</span>
                 </>
               )}
             </div>
@@ -289,12 +288,12 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
                     <img src={URL.createObjectURL(depositFile)} className="w-full h-full object-cover opacity-30" />
                   </div>
                   <Check className="w-6 h-6 text-green-500 relative z-20" />
-                  <span className="text-[9px] font-bold text-center px-4 leading-relaxed text-green-500 relative z-20 uppercase">Deposit &gt; 200 EGP</span>
+                  <span className="text-[9px] font-bold text-center px-4 leading-relaxed text-green-500 relative z-20 uppercase">إيداع &gt; 300 ج.م</span>
                 </>
               ) : (
                 <>
                   <ImageIcon className="w-6 h-6 text-white/20 group-hover:text-pink-400" />
-                  <span className="text-[9px] font-bold text-center px-4 leading-relaxed text-white/40 uppercase">Deposit Screenshot</span>
+                  <span className="text-[9px] font-bold text-center px-4 leading-relaxed text-white/40 uppercase">سكرين شوت الإيداع</span>
                 </>
               )}
             </div>
@@ -307,9 +306,9 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
         <button 
           onClick={handleSubmit}
           disabled={!userID || !depositFile || !promoFile || isVerifying}
-          className="w-full py-5 bg-pink-500 rounded-2xl font-black tracking-[0.2em] text-white pink-glow hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:grayscale uppercase"
+          className="w-full py-5 bg-pink-500 rounded-2xl font-black text-white pink-glow hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:grayscale uppercase"
         >
-          {isVerifying ? "Verifying Images..." : "Submit Request"}
+          {isVerifying ? "جاري التحقق من الصور..." : "إرسال الطلب"}
         </button>
       </div>
 
@@ -349,21 +348,21 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
               </div>
               
               <div className="text-center space-y-4 max-w-[240px]">
-                <h4 className="text-lg font-bold font-orbitron text-white">ACTIVATION IN PROGRESS</h4>
+                <h4 className="text-lg font-bold font-orbitron text-white">تفعيل الوصول جاري</h4>
                 
                 <div className="space-y-3">
                   {[
-                    { label: "Scanning Promocode Image", status: "checking" },
-                    { label: "Checking MM2010 Signature", status: "pending" },
-                    { label: "Analyzing Deposit Receipt", status: "pending" },
-                    { label: "Verifying Amount > 200 EGP", status: "pending" }
+                    { label: "جاري فحص صورة البروموكود", status: "checking" },
+                    { label: "التحقق من توقيع MM2010", status: "pending" },
+                    { label: "تحليل إيصال الإيداع", status: "pending" },
+                    { label: "التحقق من المبلغ > 300 ج.م", status: "pending" }
                   ].map((step, idx) => (
                     <motion.div 
                       key={idx}
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={{ opacity: 0, x: 10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.5 + idx * 1 }}
-                      className="flex items-center gap-3"
+                      className="flex flex-row-reverse items-center gap-3"
                     >
                       <motion.div 
                         animate={{ 
@@ -373,15 +372,15 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
                         transition={{ duration: 1, repeat: Infinity }}
                         className="w-2 h-2 rounded-full"
                       />
-                      <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest text-left">{step.label}</span>
+                      <span className="text-[10px] font-bold text-white/60 uppercase text-right">{step.label}</span>
                     </motion.div>
                   ))}
                 </div>
 
                 <div className="pt-4">
-                  <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+                  <p className="text-[10px] text-white/30 font-bold uppercase flex items-center justify-center gap-2">
                     <Loader2 className="w-3 h-3 animate-spin" />
-                    Deep Scanning...
+                    فحص عميق جاري...
                   </p>
                 </div>
               </div>

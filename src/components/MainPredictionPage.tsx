@@ -200,9 +200,9 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
   const { h, m, s } = formatSessionTime(sessionTimeLeft);
 
   const timeData = [
-    { label: "Hours", val: h, max: 1 },
-    { label: "Minutes", val: m, max: 60 },
-    { label: "Seconds", val: s, max: 60 }
+    { label: "ساعة", val: h, max: 1 },
+    { label: "دقيقة", val: m, max: 60 },
+    { label: "ثانية", val: s, max: 60 }
   ];
 
   return (
@@ -311,7 +311,7 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
                     <motion.span 
                       animate={{ opacity: [0.5, 1, 0.5] }}
                       transition={{ duration: 1, repeat: Infinity }}
-                      className="text-[8px] font-black text-pink-400 uppercase tracking-[0.4em] mb-0.5 drop-shadow-[0_0_5px_rgba(236,72,153,0.5)]"
+                      className="text-[8px] font-black text-pink-400 uppercase mb-0.5 drop-shadow-[0_0_5px_rgba(236,72,153,0.5)]"
                     >
                       {data.label[0]}
                     </motion.span>
@@ -330,7 +330,7 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
                     className="absolute left-1/2 -translate-x-1/2 w-10 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent blur-[3px] z-30"
                 />
               </div>
-              <span className="text-[8px] font-black tracking-[0.5em] text-white/50 uppercase font-orbitron group-hover:text-pink-400 transition-all">{data.label}</span>
+              <span className="text-[8px] font-black text-white/50 uppercase font-orbitron group-hover:text-pink-400 transition-all">{data.label}</span>
             </motion.div>
           ))}
         </div>
@@ -340,11 +340,11 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
             <div className="flex items-center justify-between px-2">
                 <div className="flex items-center gap-2">
                     <LayoutGrid className="w-4 h-4 text-pink-400" />
-                    <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white/40">Apple of Fortune Grid</span>
+                    <span className="text-[10px] font-black uppercase text-white/40">شبكة تفاحة الحظ</span>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="flex flex-row-reverse items-center gap-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-[8px] font-bold text-white/40 uppercase">System Ready</span>
+                    <span className="text-[8px] font-bold text-white/40 uppercase">النظام جاهز</span>
                 </div>
             </div>
 
@@ -388,48 +388,48 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
             <button
                 onClick={handleStart}
                 disabled={isScanning}
-                className="w-full py-5 bg-pink-500 rounded-2xl font-black tracking-widest text-white pink-glow flex items-center justify-center gap-3 hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50"
+                className="w-full py-5 bg-pink-500 rounded-2xl font-black text-white pink-glow flex flex-row-reverse items-center justify-center gap-3 hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50"
             >
                 <Play className={`w-5 h-5 fill-current ${isScanning ? "animate-pulse" : ""}`} />
-                <span className="flex-1 text-center">START</span>
+                <span className="flex-1 text-center">ابدأ</span>
             </button>
             <button
                 onClick={handleRestart}
                 disabled={isScanning}
-                className="w-full py-5 bg-white/5 rounded-2xl font-black tracking-widest text-white border border-white/10 flex items-center justify-center gap-3 hover:bg-white/10 active:scale-[0.98] transition-all disabled:opacity-50"
+                className="w-full py-5 bg-white/5 rounded-2xl font-black text-white border border-white/10 flex flex-row-reverse items-center justify-center gap-3 hover:bg-white/10 active:scale-[0.98] transition-all disabled:opacity-50"
             >
                 <RotateCcw className={`w-5 h-5 ${isScanning ? "animate-spin" : ""}`} />
-                <span className="flex-1 text-center">RESTART</span>
+                <span className="flex-1 text-center">إعادة تعيين</span>
             </button>
         </div>
 
         {/* Live Winners Feed */}
         <div className="space-y-4">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-row-reverse items-center gap-2">
                 <Trophy className="w-4 h-4 text-yellow-500" />
-                <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white/40">Live Winners Feed</span>
+                <span className="text-[10px] font-black uppercase text-white/40">قائمة الفائزين المباشرة</span>
             </div>
             <div className="space-y-3">
                 <AnimatePresence initial={false}>
                     {winners.map((win, idx) => (
                         <motion.div
                             key={win}
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 20 }}
+                            exit={{ opacity: 0, x: -20 }}
                             transition={{ duration: 0.4 }}
-                            className="flex items-center justify-between p-4 glass rounded-2xl border-white/5"
+                            className="flex flex-row-reverse items-center justify-between p-4 glass rounded-2xl border-white/5"
                         >
-                            <div className="flex items-center gap-3">
+                            <div className="flex flex-row-reverse items-center gap-3">
                                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center border border-white/5">
                                     <span className="text-[10px] font-black text-white/40">#{idx + 1}</span>
                                 </div>
-                                <span className="text-sm font-mono font-bold tracking-wider text-white/90">{win}</span>
+                                <span className="text-sm font-mono font-bold text-white/90">{win}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full flex items-center gap-1.5">
+                                <div className="px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full flex flex-row-reverse items-center gap-1.5">
                                     <div className="w-1 h-1 rounded-full bg-green-500" />
-                                    <span className="text-[9px] font-black text-green-500 uppercase tracking-tighter">Winning</span>
+                                    <span className="text-[9px] font-black text-green-500 uppercase">فوز</span>
                                 </div>
                             </div>
                         </motion.div>
@@ -469,9 +469,9 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
                     />
                 </div>
                 <div className="space-y-2">
-                  <p className="text-[10px] font-black tracking-[0.4em] text-pink-400 uppercase">Authentication Success</p>
+                  <p className="text-[10px] font-black text-pink-400 uppercase">تم التحقق بنجاح</p>
                   <h3 className="text-2xl font-black font-orbitron tracking-tighter text-white break-all">
-                    WELCOME : <span className="text-pink-400">{userID || "GUEST"}</span>
+                    أهلاً بك : <span className="text-pink-400">{userID || "ضيف"}</span>
                   </h3>
                 </div>
               </div>
@@ -480,9 +480,9 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
 
               <button 
                 onClick={() => setShowWelcome(false)}
-                className="w-full py-4 bg-pink-500 rounded-2xl font-black tracking-[0.2em] text-xs text-white pink-glow hover:brightness-110 active:scale-[0.98] transition-all uppercase"
+                className="w-full py-4 bg-pink-500 rounded-2xl font-black text-xs text-white pink-glow hover:brightness-110 active:scale-[0.98] transition-all uppercase"
               >
-                START PREDICTION
+                ابدأ التوقع
               </button>
             </motion.div>
           </motion.div>

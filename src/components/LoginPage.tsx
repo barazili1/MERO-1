@@ -57,7 +57,7 @@ export default function LoginPage({ onNavigate, passwordValue, onPasswordChange,
         <div className="flex items-center gap-2">
           <Users className="w-4 h-4 text-pink-400" />
           <div className="flex flex-col">
-            <span className="text-[10px] text-white/50 uppercase tracking-widest leading-none">Online Users</span>
+            <span className="text-[10px] text-white/50 uppercase leading-none">المستخدمين الآن</span>
             <motion.span 
               key={onlineUsers}
               initial={{ y: 5, opacity: 0 }}
@@ -75,7 +75,7 @@ export default function LoginPage({ onNavigate, passwordValue, onPasswordChange,
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="w-2.5 h-2.5 rounded-full bg-pink-500 pink-glow"
           />
-          <span className="text-xs font-bold tracking-tighter text-white/80">STATUS: ACTIVE</span>
+          <span className="text-xs font-bold text-white/80">الحالة: نشط</span>
         </div>
       </div>
 
@@ -114,17 +114,17 @@ export default function LoginPage({ onNavigate, passwordValue, onPasswordChange,
           className="w-full space-y-6"
         >
           <div className="space-y-2">
-            <label className="text-xs font-semibold text-white/40 uppercase tracking-widest ml-1">Secure Password</label>
+            <label className="text-xs font-semibold text-white/40 uppercase ml-1 text-right w-full block">كلمة المرور الآمنة</label>
             <div className="relative group">
-              <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
                 <Lock className="w-5 h-5 text-white/20 group-focus-within:text-pink-400 transition-colors" />
               </div>
               <input
                 type="password"
                 value={passwordValue}
                 onChange={(e) => onPasswordChange(e.target.value)}
-                placeholder="Enter Access Key"
-                className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-pink-400/50 focus:border-pink-400 transition-all"
+                placeholder="أدخل كود الوصول"
+                className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pr-12 pl-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-pink-400/50 focus:border-pink-400 transition-all text-right"
               />
             </div>
           </div>
@@ -132,9 +132,9 @@ export default function LoginPage({ onNavigate, passwordValue, onPasswordChange,
           <button 
             onClick={handleLogin}
             disabled={passwordValue.length === 0}
-            className="w-full py-4 bg-gradient-to-r from-pink-500 to-rose-400 rounded-2xl font-bold tracking-widest text-white pink-glow hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed group flex items-center justify-center gap-2"
+            className="w-full py-4 bg-gradient-to-r from-pink-500 to-rose-400 rounded-2xl font-bold text-white pink-glow hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed group flex items-center justify-center gap-2"
           >
-            LOGIN TO SYSTEM
+            تسجيل الدخول للنظام
             <ShieldCheck className="w-5 h-5 group-hover:animate-pulse" />
           </button>
         </motion.div>
@@ -147,12 +147,12 @@ export default function LoginPage({ onNavigate, passwordValue, onPasswordChange,
         transition={{ delay: 0.5 }}
         className="flex flex-col items-center gap-4 py-8 border-t border-white/5"
       >
-        <p className="text-sm text-white/40">Don't have any password?</p>
+        <p className="text-sm text-white/40">ليس لديك كلمة مرور؟</p>
         <button 
           onClick={() => onNavigate("condition")}
-          className="flex items-center gap-2 px-8 py-3 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 text-pink-400 font-bold text-sm tracking-wider transition-all"
+          className="flex flex-row-reverse items-center gap-2 px-8 py-3 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 text-pink-400 font-bold text-sm transition-all"
         >
-          GET PASSWORD
+          احصل على كلمة المرور
           <ExternalLink className="w-4 h-4" />
         </button>
       </motion.div>
