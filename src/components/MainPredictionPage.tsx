@@ -226,9 +226,9 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-6 py-4 pb-20 space-y-5 scrollbar-hide">
+      <div className="flex-1 overflow-y-auto px-6 pt-2 pb-20 space-y-3 scrollbar-hide">
         {/* Timer Section (3 High-End Cyber-Luxury RGB Circles) */}
-        <div className="flex justify-center gap-4 py-2 px-2">
+        <div className="flex justify-center gap-4 py-1 px-2">
           {timeData.map((data, i) => (
             <motion.div 
               key={i} 
@@ -336,7 +336,7 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
         </div>
 
         {/* Prediction Grid (5x10) */}
-        <div className="p-4 glass rounded-[2.5rem] border-white/5 space-y-4">
+        <div className="p-4 glass rounded-[2.5rem] border-white/5 space-y-2">
             <div className="flex items-center justify-between px-2">
                 <div className="flex items-center gap-2">
                     <LayoutGrid className="w-4 h-4 text-pink-400" />
@@ -384,22 +384,22 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
         </div>
 
         {/* Action Buttons */}
-        <div className="grid grid-cols-2 gap-4 pb-4">
+        <div className="grid grid-cols-2 gap-4 pb-2">
             <button
                 onClick={handleStart}
                 disabled={isScanning}
-                className="py-5 bg-pink-500 rounded-2xl font-black tracking-widest text-white pink-glow flex items-center justify-center gap-3 hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50"
+                className="w-full py-5 bg-pink-500 rounded-2xl font-black tracking-widest text-white pink-glow flex items-center justify-center gap-3 hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50"
             >
                 <Play className={`w-5 h-5 fill-current ${isScanning ? "animate-pulse" : ""}`} />
-                START
+                <span className="flex-1 text-center">START</span>
             </button>
             <button
                 onClick={handleRestart}
                 disabled={isScanning}
-                className="py-5 bg-white/5 rounded-2xl font-black tracking-widest text-white border border-white/10 flex items-center justify-center gap-3 hover:bg-white/10 active:scale-[0.98] transition-all disabled:opacity-50"
+                className="w-full py-5 bg-white/5 rounded-2xl font-black tracking-widest text-white border border-white/10 flex items-center justify-center gap-3 hover:bg-white/10 active:scale-[0.98] transition-all disabled:opacity-50"
             >
                 <RotateCcw className={`w-5 h-5 ${isScanning ? "animate-spin" : ""}`} />
-                RESTART
+                <span className="flex-1 text-center">RESTART</span>
             </button>
         </div>
 
