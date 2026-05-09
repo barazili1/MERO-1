@@ -9,6 +9,10 @@
   --color-crimson: #DC2626;
   --color-crimson-light: #EF4444;
   --color-crimson-dark: #991B1B;
+  
+  --color-hot-pink: #FF69B4;
+  --color-soft-pink: #FBCFE8;
+  --color-gold: #FFD700;
 }
 
 @keyframes rgb-neon {
@@ -37,6 +41,16 @@
 
 .red-glow-heavy {
   box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+}
+
+.pink-glow {
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.4);
+}
+
+.gold-text {
+  background: linear-gradient(to bottom, #FFD700, #B8860B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .neon-border {
