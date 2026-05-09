@@ -7,15 +7,22 @@ export default function BackgroundVideo() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      // Force muted and playsinline to ensure autoplay
       video.muted = true;
       video.playsInline = true;
       
       const playVideo = () => {
-        video.play().catch(() => {
-          // If interaction is required, we can't do much automatically, 
-          // but muted + playsinline usually bypasses this.
-        });
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(() => {
+            const handleFirstInteraction = () => {
+              video.play();
+              document.removeEventListener('touchstart', handleFirstInteraction);
+              document.removeEventListener('click', handleFirstInteraction);
+            };
+            document.addEventListener('touchstart', handleFirstInteraction);
+            document.addEventListener('click', handleFirstInteraction);
+          });
+        }
       };
 
       if (video.readyState >= 2) {
@@ -24,7 +31,9 @@ export default function BackgroundVideo() {
         video.addEventListener('canplay', playVideo);
       }
       
-      return () => video.removeEventListener('canplay', playVideo);
+      return () => {
+        video.removeEventListener('canplay', playVideo);
+      };
     }
   }, []);
 
@@ -41,7 +50,12 @@ export default function BackgroundVideo() {
         disablePictureInPicture
         preload="auto"
         className="absolute w-full h-full object-cover opacity-90 pointer-events-none"
-        style={{ pointerEvents: 'none' }}
+        style={{ 
+          pointerEvents: 'none',
+          WebkitBackfaceVisibility: 'hidden',
+          WebkitTransform: 'translateZ(0)'
+        }}
+        onContextMenu={(e) => e.preventDefault()}
       >
         <source 
           src="https://www.image2url.com/r2/default/videos/1778255710540-70f17a78-c0f0-4843-8892-b6c787e6056f.mp4" 

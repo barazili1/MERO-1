@@ -61,12 +61,28 @@
 /* Hide video controls globally to prevent "Play" icon on mobile */
 video::-webkit-media-controls {
   display: none !important;
+  -webkit-appearance: none;
 }
 video::-webkit-media-controls-start-indicator,
 video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-panel {
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls-toggle-closed-captions-button,
+video::-webkit-media-controls-enclosure {
   display: none !important;
   -webkit-appearance: none;
+}
+
+/* For Firefox */
+video::-moz-media-controls {
+  display: none !important;
+}
+
+/* General safety for any media element */
+video {
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
