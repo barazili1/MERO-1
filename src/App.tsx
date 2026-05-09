@@ -22,16 +22,6 @@ export default function App() {
   const [sessionTimeLeft, setSessionTimeLeft] = useState(900);
 
   useEffect(() => {
-    // Initial splash timeout
-    if (screen === "splash") {
-      const timer = setTimeout(() => {
-        setScreen("login");
-      }, 3500); // Allow time for progress bar animation
-      return () => clearTimeout(timer);
-    }
-  }, [screen]);
-
-  useEffect(() => {
     // Session timer logic
     if (screen === "keygen" || screen === "main") {
       const timer = setInterval(() => {
@@ -69,7 +59,7 @@ export default function App() {
               transition={{ duration: 0.5 }}
               className="fixed inset-0 z-50 bg-transparent"
             >
-              <SplashScreen />
+              <SplashScreen onComplete={() => setScreen("login")} />
             </motion.div>
           )}
 

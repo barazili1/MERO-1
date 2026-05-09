@@ -216,7 +216,7 @@ export default function MainPredictionPage({ userID, sessionTimeLeft }: MainPred
               className="w-8 h-8 rounded-lg object-cover border border-pink-500/20 drop-shadow-[0_0_8px_rgba(236,72,153,0.3)]"
             />
             <h1 className="text-xl font-black font-orbitron tracking-tighter text-white">
-                MERO <span className="text-pink-400">VIP</span>
+                MIRO <span className="text-pink-400">VIP</span>
             </h1>
         </div>
 

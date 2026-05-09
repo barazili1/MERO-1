@@ -26,6 +26,7 @@ export default function BackgroundVideo() {
           document.addEventListener('touchstart', handleFirstInteraction, { passive: true });
           document.addEventListener('click', handleFirstInteraction, { passive: true });
           document.addEventListener('keydown', handleFirstInteraction, { passive: true });
+          window.addEventListener('userInteraction', handleFirstInteraction, { passive: true });
         }
       };
 
@@ -37,6 +38,7 @@ export default function BackgroundVideo() {
       
       return () => {
         video.removeEventListener('canplay', playVideo);
+        window.removeEventListener('userInteraction', playVideo);
       };
     }
   }, []);

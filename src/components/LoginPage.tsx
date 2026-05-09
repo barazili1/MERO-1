@@ -102,7 +102,7 @@ export default function LoginPage({ onNavigate, passwordValue, onPasswordChange,
           className="mb-12"
         >
           <h2 className="text-5xl font-black font-orbitron tracking-tighter text-center">
-            <span className="text-white">MERO </span>
+            <span className="text-white">MIRO </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-hot-pink via-pink-300 to-rose-400 drop-shadow-[0_0_15px_rgba(236,72,153,0.5)]">VIP</span>
           </h2>
         </motion.div>
