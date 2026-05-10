@@ -124,7 +124,7 @@ export default function ConditionPage({ onNavigate, onSetUserID }: ConditionPage
         <div className="grid grid-cols-1 gap-3">
           {[
             { label: "انضم لقناة التليجرام", icon: Send, color: "text-blue-400", link: "https://t.me/MM2010000007" },
-            { label: "انضم لقناة اليوتيوب", icon: Youtube, color: "text-red-500", link: "#" }
+            { label: "انضم لقناة اليوتيوب", icon: Youtube, color: "text-red-500", link: "https://youtube.com/@mirovip2010?si=q0pB84ySO5cZHRxx" }
           ].map((task, i) => (
             <div key={i} className="flex flex-row-reverse items-center justify-between p-4 glass rounded-2xl transition-all hover:border-pink-500/30 group">
               <div className="flex flex-row-reverse items-center gap-3">
